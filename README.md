@@ -1,10 +1,17 @@
-# spoilers (NEEDS NETWORKMANAGER ON LINUX!)
-Blocks internet access to help you Solve Competitive Programming Problems on Linux
+# spoilers (NEEDS DIALOG + NETWORKMANAGER)
+Blocks internet access to help you Solve Competitive Programming Problems on Unix
 
-# Note
-You will need NetworkManager. `ncmli` should already be preinstalled!
-Hopefully in the future this script can be updated to support
-other platforms.
+# What you need to install
+
+**TL;DR**: dialog and NetworkManager are needed for the script. espeak is optional
+and is used for text to speech.
+
+You will need `dialog` for the script to be able to show the prompts. This is probably
+already installed, but some operating systems don't ship with this.
+
+Next, you will need NetworkManager. `ncmli` should be installed
+after you install NetworkManager. Hopefully in the future this
+script can be updated to support other platforms.
 
 Also, if you want to use the Text to Speech feature for annoucements,
 `espeak` should be installed.

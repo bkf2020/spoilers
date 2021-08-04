@@ -1,7 +1,15 @@
 #!/bin/sh
 T2S="yes"
 
-dialog --msgbox "Welcome to spoilers! This tool will give you 2 Pomodoro rounds of 50 minutes work and 10 minutes rest." 10 60
+nodialog() {
+	echo "Error! 'dialog' is not installed"
+	echo "You will need 'dialog' installed for this script to work."
+	echo "Also, you will need NetworkManager for this script to turn off the internet."
+	echo "Lastly, if you want text to speech, you will need espeak to be installed."
+	exit
+}
+
+dialog --msgbox "Welcome to spoilers! This tool will give you 2 Pomodoro rounds of 50 minutes work and 10 minutes rest." 10 60 || nodialog
 dialog --msgbox "When you are working, the internet will be completely turned off. If you need internet to submit a problem, press ENTER in the dialog box to select the 'I need to submit' button and you will get a two minute timer to submit." 10 60
 dialog --yesno "Note that you will need NetworkManager installed. Do you have this installed? If not, install it and relaunch this script." 10 60 || exit
 dialog --defaultno --yesno "Do you want to turn on text to speech? It will update you on when a work session starts/finishes or when a break starts/finishes.\nNote this requires you have 'espeak' installed." 10 60 || T2S="no"
